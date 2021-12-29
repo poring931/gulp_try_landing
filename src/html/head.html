@@ -1,0 +1,82 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>@@title</title>
+
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Сайт лофтовой мебели" />
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="files/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="files/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="files/favicon-16x16.png">
+    <link rel="manifest" href="files/site.webmanifest">
+    <link rel="mask-icon" href="files/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:title" content="Лофт мебель" />
+    <meta property="og:type" content="article" />
+ <meta property="og:url" content="https://www.site.com/example" />
+ <meta property="og:url" content="https://loftdc.ru/" />
+<meta property="og:image" content="@img/logo.svg" />
+<meta property="og:decoration" content="О сайте" />
+
+
+
+    <style>
+    .preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    background-color: #F9EDDA;
+    background-image: linear-gradient(
+        19deg, #ffffff 0%, #f8b853 100%);
+    z-index: 1001;
+    color: #eee;
+    }
+
+    .preloader__image {
+      position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+      text-align: center;
+      animation: preloader-rotate 4s infinite linear;
+    }
+
+    @keyframes preloader-rotate {
+    0% {
+        transform: scale(1.4) translate(-50%, -50%);
+    }
+    25% {
+        transform: scale(1) translate(-50%, -50%);
+    }
+    50% {
+        transform: scale(1.4) translate(-50%, -50%);
+    }
+      100% {
+        transform: scale(1) translate(-50%, -50%);
+      }
+    }
+
+    .loaded_hiding .preloader {
+      transition: 0.3s opacity;
+      opacity: 0;
+      
+    }
+
+    .loaded .preloader {
+      display: none;
+    }
+  </style>
+</head>
+
+    <div class="preloader">
+        <img  class="preloader__image" src="@img/logo.svg" alt="">
+    </div>
