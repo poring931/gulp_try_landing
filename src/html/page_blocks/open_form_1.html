@@ -1,0 +1,32 @@
+<div class="form_1 container form_block">
+    <div class="form_block_content">
+        <div class="form_block_content_title f_bold f-2">
+                У вас остались вопросы или <br> нужен замер прямо сейчас?
+        </div>
+        <div class="f_reg">
+            Отправьте заявку на бесплатную консультацию
+        </div>
+    </div>
+    <div class="form_block_form">
+        <form class="form-1 form" action="/send" method="POST">
+            <div class="form_input">
+                <input class="f_reg" autocomplete="off" onchange="this.setAttribute('value', this.value);" value="" type="text" name="name" id="form-1_name">
+                <label for="form-1_name">Имя</label>
+            </div>
+            <div class="form_input">
+                <input class="f_reg" minlength="5" required autocomplete="off" onchange="this.setAttribute('value', this.value);" value="" type="tel" name="phone" id="form-1_tel" >
+                <label for="form-1_tel">Телефон</label>
+            </div>
+            <div class="form_input question_input">
+                <input class="f_reg" autocomplete="off" onchange="this.setAttribute('value', this.value);" value="" type="text" name="question" id="form-1_question" >
+                <label for="form-1_question">Вопрос</label>
+            </div>
+            <div class="agreement f_reg">Нажимая кнопку «Отправить заявку» я даю свое <br> согласие на обработку персональных данных</div>
+            <button class="call_btn f_reg f-15" type="submit">
+              Консультация<img loading="lazy" decoding="async" src="img/icon_arrowRight.svg" alt="">
+            </button>
+        </form>
+    </div>
+</div>
+
+

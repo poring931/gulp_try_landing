@@ -8,6 +8,13 @@
 @font-face{ 
 	font-family: Jeko; 
 	font-display: swap; 
+	src: url("../fonts/Jeko-Light.woff2") format("woff2"), url("../fonts/Jeko-Light.woff") format("woff"); 
+	font-weight: 300;
+	 font-style:normal; 
+}
+@font-face{ 
+	font-family: Jeko; 
+	font-display: swap; 
 	src: url("../fonts/Jeko-Regular.woff2") format("woff2"), url("../fonts/Jeko-Regular.woff") format("woff"); 
 	font-weight: 400;
 	 font-style:normal; 
@@ -22,7 +29,7 @@
 @font-face{ 
 	font-family: Jeko; 
 	font-display: swap; 
-	src: url("../fonts/Jeko-Light.woff2") format("woff2"), url("../fonts/Jeko-Light.woff") format("woff"); 
-	font-weight: 300;
+	src: url("../fonts/Jeko-Thin.woff2") format("woff2"), url("../fonts/Jeko-Thin.woff") format("woff"); 
+	font-weight: 100;
 	 font-style:normal; 
 }

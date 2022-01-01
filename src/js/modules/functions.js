@@ -14,3 +14,26 @@ export function isWebp() {
     });
 };
 
+
+//toggle style css
+export function toggleStyle(el, prop, style1, style2) {
+  el.style[prop] = el.style[prop] === style1 ? style2 : style1;
+}
+
+
+//async load css
+export function asyncCSS(href) {
+    var css = document.createElement('link');
+    css.rel = "stylesheet";
+    css.href = href;
+    document.head.appendChild(css);
+}
+
+//async load js
+export function asyncJs(src) {
+   var js = document.createElement("script");
+    js.type = "text/javascript";
+    js.async = true;
+    js.src = src;
+    document.head.appendChild(js);
+}

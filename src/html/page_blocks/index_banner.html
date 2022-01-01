@@ -29,7 +29,12 @@
         </div>
 
         <div class="banner_pict">
-                картинки
+            <picture>
+                <source srcset="@img/banner_img.png-sm.webp" media="(max-width: 640px)" type="image/webp" />
+                <source srcset="@img/banner_img.png-md.webp" media="(max-width: 768px)" type="image/webp" />
+                <source srcset="@img/banner_img.png-lg.webp" media="(max-width: 1024px)" type="image/webp" />
+                <img src="@img/banner_img.webp" class="" alt="" />
+            </picture> 
         </div>
     </div>
 </div>

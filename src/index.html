@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
     @@include('html/head.html',{
-        "title" : "Главная"
+        "title" : "Мебель в стиле лофт по вашей фотографии"
     })
 <body>
     @@include('html/header.html',{})
-     @@include('html/page_blocks/index_banner.html',{})
 
     <main>
+     @@include('html/page_blocks/index_banner.html',{})
+     @@include('html/page_blocks/our_worth.html',{})
+     @@include('html/page_blocks/open_form_1.html',{})
+     @@include('html/page_blocks/reviews.html',{})
+     @@include('html/page_blocks/bottom_form.html',{})
+
         <!-- <picture>
             <source srcset="@img/banner_pc-sm.webp" media="(max-width: 640px)" type="image/webp" />
             <source srcset="@img/banner_pc-md.webp" media="(max-width: 768px)" type="image/webp" />
