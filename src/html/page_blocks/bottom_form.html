@@ -7,12 +7,17 @@
             <div class="choose_title_item f_bold  f-27">
                Заказать звонок
             </div>
+            <div class="choose_title_item f_bold  f-27">
+               Вызвать замерщика
+            </div>
      
         </div>
      
     </div>
     <div class="form_block_form">
         <form class="form-1 form" action="/send" method="POST">
+            <input type="text" name="surname" style="display:none;">
+            <input type="text" name="form_name" style="display:none;" value="Задать вопрос">
             <div class="form_input">
                 <input class="f_reg" autocomplete="off" onchange="this.setAttribute('value', this.value);" value="" type="text" name="name" id="form-1_name">
                 <label for="form-1_name">Имя</label>

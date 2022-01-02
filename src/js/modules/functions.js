@@ -37,3 +37,13 @@ export function asyncJs(src) {
     js.src = src;
     document.head.appendChild(js);
 }
+
+
+export function openModal(){
+    document.querySelector('.overlay').style.cssText = "opacity:1; z-index:2;"
+    document.querySelector('body').classList.add('no_overlay')
+}
+export function closeModal(){
+    document.querySelector('.overlay').style.cssText = "opacity:0; z-index:-1;"
+    document.querySelector('body').classList.remove('no_overlay')
+}

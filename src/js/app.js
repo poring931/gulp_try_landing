@@ -1,10 +1,10 @@
-import * as flsFunction from "./modules/functions.js";
+import * as Funtions from "./modules/functions.js";
 import * as imputPlag from "inputmask";
 // import Swiper  from 'swiper';//пример подключения слайдера
   import Swiper, { Navigation } from 'swiper';
 
 
-flsFunction.isWebp();//проверка на поддержку вебпи. но навреное лучше это выпилить
+Funtions.isWebp();//проверка на поддержку вебпи. но навреное лучше это выпилить
 
 
 //Для форм
@@ -18,9 +18,14 @@ chooseTitleItem.forEach((currentItem,index) => {
     currentItem.addEventListener('click',function (e) {
         if (!this.classList.contains("active")) {
             document.querySelector('.form_bottom span').innerText = this.innerText;
+            document.querySelector('input[name="form_name"]').value = this.innerText;
             document.querySelector('.choose_title_item.active').classList.remove("active");
             this.classList.add('active')
-            flsFunction.toggleStyle(document.querySelector('.form_bottom .question_input'),'display', 'none', 'block')
+            if(index !=2){
+                Funtions.toggleStyle(document.querySelector('.form_bottom .question_input'),'display', 'none', 'block')
+            }
+
+          
         }
     })
 });
@@ -32,8 +37,9 @@ Swiper.use([Navigation]);
 var swiper = new Swiper(".reviews_block", {
     direction: 'horizontal',
     slidesPerView: 6,
-    spaceBetween: 55,
     freeMode: true,
+    grabCursor:true,
+    watchOverflow:true,
     loop: true,
        autoplay: {
           delay: 2500,
@@ -57,38 +63,75 @@ var swiper = new Swiper(".reviews_block", {
     // when window width is >= 640px
     640: {
       slidesPerView: 6,
-      
-      spaceBetween: 55
+      spaceBetween: 60
     }
   }
 });
 
 
-//фансибокс для отзывов
-let fslightbox = false;
-document.querySelectorAll('.reviews_item').forEach((currentItem,index) => {
+
+
+document.addEventListener("DOMContentLoaded", function(event) {
+
+    Funtions.asyncCSS('/files/swiper.css');
+
+    setTimeout(() => {
+        //фансибокс для отзывов
+        Funtions.asyncJs("/files/fslightbox.js");
+    }, 500);
+
+});
+
+
+//для последних работ фильтр
+let chooseProductCat = document.querySelectorAll('.our_last_works_tabs_list__item');
+chooseProductCat.forEach((currentItem,index) => {
     currentItem.addEventListener('click',function (e) {
-       e.preventDefault();
-        if (fslightbox == false){
-            flsFunction.asyncJs("/files/fslightbox.js");
-            fslightbox = true;
+        if (!this.classList.contains("active")) {
+            document.querySelector('.our_last_works_tabs_list__item.active').classList.remove("active");
+            this.classList.add('active')
         }
     })
 });
 
+const filters = document.querySelectorAll('.filter');
 
+filters.forEach(filter => { 
 
-document.addEventListener("DOMContentLoaded", function(event) {
-    flsFunction.asyncCSS('/files/swiper.css');
-    setTimeout(() => {
-        flsFunction.asyncJs("/files/fslightbox.js");
-        fslightbox = true;
-    }, 4500);
+  filter.addEventListener('click', function() {
+
+    let selectedFilter = filter.getAttribute('data-filter');
+    let itemsToHide = document.querySelectorAll(`.our_last_works_products .our_last_works_products_item:not([data-filter='${selectedFilter}'])`);
+    let itemsToShow = document.querySelectorAll(`.our_last_works_products [data-filter='${selectedFilter}']`);
+
+    if (selectedFilter == 'all') {
+      itemsToHide = [];
+      itemsToShow = document.querySelectorAll('.our_last_works_products [data-filter]');
+    }
+
+    itemsToHide.forEach(el => {
+      el.classList.add('hide');
+      el.classList.remove('show');
+    });
+
+    itemsToShow.forEach(el => {
+      el.classList.remove('hide');
+      el.classList.add('show'); 
+    });
+
+  });
 });
 
 
 
+//работа с формами
 
+let close_form = document.querySelectorAll('.close_modal');
+close_form.forEach((currentItem,index) => {
+      currentItem.addEventListener('click',function (e) {
+          Funtions.closeModal()
+    })
+});
 
 
 //  $(document).on("submit", ".feedback_bottom", function(e) {

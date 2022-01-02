@@ -3,11 +3,11 @@
         <div class="header_block">
             <div class="header-logo">
                 <a href="https://loftdc.ru/">
-                    <img src="@img/logo.svg" alt="Loft mebee">
+                    <img width="364" height="60" src="@img/logo.svg" alt="Loft mebee">
                 </a>
             </div>
             <div class="header-inst f-2 f_light">
-                <a href="mailto:pochta@mail.ru" >
+                <a href="mailto:pochta@mail.ru">
                     pochta@mail.ru
                 </a>
             </div>
@@ -20,23 +20,76 @@
                 <a href="tel:+74999386141">
                     +7 499 938-61-41
                 </a>
-             
+
             </div>
         </div>
     </div>
 </footer>
 
-
-
+<div class="modal_wrapper">
     
-    <script>
-        window.onload = function () {
-            document.body.classList.add('loaded_hiding');
-            window.setTimeout(function () {
-                document.body.classList.add('loaded');
-                document.body.classList.remove('loaded_hiding');
-            }, 500);
-        }
-  </script>
+    <div class="modal_consultation form_block">
+        <div class="close_modal">
+            <img src="@img/close_icon.svg" alt="">
+        </div>
+        <div class="form_left_text f_bold">
+            Связаться с нами
+        </div>
+        <div class="form_block_content">
+            <div class="form_block_content_title f_reg f-3">
+                Бесплатная <br> <span style="color: #F17202;">консультация</span>
+            </div>
+
+        </div>
+        <div class="form_block_form">
+            <form class="modal_form form_consultation form" action="/send" method="POST">
+                <div class="form_input">
+                    <input class="f_reg" autocomplete="off" onchange="this.setAttribute('value', this.value);" value=""
+                        type="text" name="name" id="form-modal_name">
+                    <label for="form-modal_name">Имя</label>
+                </div>
+                <div class="form_input">
+                    <input class="f_reg" minlength="5" required autocomplete="off"
+                        onchange="this.setAttribute('value', this.value);" value="" type="tel" name="phone"
+                        id="form-modal_tel">
+                    <label for="form-modal_tel">Телефон</label>
+                </div>
+                <div class="form_input">
+                    <input class="f_reg" minlength="5"  autocomplete="off"
+                        onchange="this.setAttribute('value', this.value);" value="" type="email" name="email"
+                        id="form-modal_mail">
+                    <label for="form-modal_mail">E-mail</label>
+                </div>
+                    <div class="form_input question_input">
+                   
+                        <textarea value="" onchange="this.setAttribute('value', this.value);" name="question" id="form-modal_question" cols="30" rows="10"></textarea>
+                        <label for="form-modal_question">Ваш вопрос</label>
+                    </div>
+                <div class="bottom_part_form">
+            
+                        <button class="call_btn f_reg f-15" type="submit">
+                        Консультация<img loading="lazy" decoding="async" src="img/icon_arrowRight.svg" alt="">
+                    </button>
+                    <div class="agreement f_reg">Нажимая кнопку «Отправить заявку» я даю свое <br> согласие на обработку
+                        персональных данных</div>
+                 
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    window.onload = function () {
+        document.body.classList.add('loaded_hiding');
+        window.setTimeout(function () {
+            document.body.classList.add('loaded');
+            document.body.classList.remove('loaded_hiding');
+        }, 500);
+    }
+</script>
 </body>
+
 </html>
