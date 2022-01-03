@@ -39,11 +39,44 @@ export function asyncJs(src) {
 }
 
 
-export function openModal(){
-    document.querySelector('.overlay').style.cssText = "opacity:1; z-index:2;"
+export function openModal(name = ''){
+    if (name){
+        document.querySelector(`.modal_wrapper .${name}`).classList.add('active')
+    }
+    document.querySelector('.overlay_').style.cssText = "opacity:1; z-index:2; pointer-events:inherit;"
     document.querySelector('body').classList.add('no_overlay')
+    document.querySelector('.modal_wrapper').classList.add('active')
+
+  
 }
 export function closeModal(){
-    document.querySelector('.overlay').style.cssText = "opacity:0; z-index:-1;"
+
+    if (document.querySelector('.modal_wrapper .form_block.active')){
+        document.querySelector('.modal_wrapper .form_block.active').classList.remove('active')
+    }
+    document.querySelector('.overlay_').style.cssText = "opacity:0; z-index:-1; pointer-events:none;"
     document.querySelector('body').classList.remove('no_overlay')
+    document.querySelector('.modal_wrapper').classList.remove('active')
+
+}
+
+export const showThanksMessageconst = (text=`Спасибо за заявку, <br> с Вами скоро свяжутся`) => {
+    let thanks = document.querySelector('.thanks_')
+    thanks.innerHTML = text;
+    thanks.style.opacity = '1';
+    setTimeout(() => {
+        thanks.style.opacity = '0';
+    }, 3400);
+}
+export const productAttrToModal = (title, price='', cat, year, src='') => {
+    document.querySelector('.form_product_title').innerText = title;
+    document.querySelector('.form_product_price').innerText = price;
+    document.querySelector('.form_product_cat').innerText = cat;
+    document.querySelector('.form_product_year').innerText = year;
+    console.log(src);
+    let img_original = src.replace('-sm','').replace('-md','').replace('-lg',''),
+        img_medium = src;
+    document.querySelector('.form_product_img img').src = img_original.replace('.webp','-sm.webp');
+    document.querySelector('.form_product_img').href = img_original;
+    refreshFsLightbox();
 }

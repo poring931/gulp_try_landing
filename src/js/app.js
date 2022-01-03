@@ -85,11 +85,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 //для последних работ фильтр
 let chooseProductCat = document.querySelectorAll('.our_last_works_tabs_list__item');
+let our_works = document.querySelector('.our_last_works');
 chooseProductCat.forEach((currentItem,index) => {
     currentItem.addEventListener('click',function (e) {
         if (!this.classList.contains("active")) {
             document.querySelector('.our_last_works_tabs_list__item.active').classList.remove("active");
             this.classList.add('active')
+            if (our_works.getBoundingClientRect().top < -401){
+              document.querySelector('.our_last_works').scrollIntoView()
+            }
+
         }
     })
 });
@@ -126,13 +131,45 @@ filters.forEach(filter => {
 
 //работа с формами
 
-let close_form = document.querySelectorAll('.close_modal');
+let close_form = document.querySelectorAll('.close_modal, .overlay_');
 close_form.forEach((currentItem,index) => {
       currentItem.addEventListener('click',function (e) {
           Funtions.closeModal()
     })
 });
 
+document.querySelector('.modal_consultation').addEventListener('click',function (e) {
+      Funtions.openModal('modal_consultation')
+})
+document.querySelector('.call_measurment').addEventListener('click',function (e) {
+      Funtions.openModal('measurment')
+})
+
+
+
+//работа с товарами
+
+
+let products = document.querySelectorAll('.our_last_works_products_item');
+products.forEach((product,index) => {
+    product.addEventListener('click',function (e) {
+      
+      let product_name = this.querySelector('.our_last_works_products_item_name').innerText,
+          product_cat = this.querySelectorAll('.our_last_works_products_item_cat div')[0].innerText,
+          product_year = this.querySelectorAll('.our_last_works_products_item_cat div')[1].innerText,
+          product_price = this.querySelector('.our_last_works_products_item_price').innerText,
+          product_img = this.querySelector('.our_last_works_products_item_img img').src;
+      Funtions.productAttrToModal(product_name, product_price, product_cat, product_year, product_img)
+
+      Funtions.openModal('product')
+    })
+});
+
+
+
+
+
+//  Funtions.showThanksMessageconst('sadsad')
 
 //  $(document).on("submit", ".feedback_bottom", function(e) {
 //         var isModal = false;

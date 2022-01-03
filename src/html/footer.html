@@ -27,10 +27,10 @@
 </footer>
 
 <div class="modal_wrapper">
-    
+
     <div class="modal_consultation form_block">
         <div class="close_modal">
-            <img src="@img/close_icon.svg" alt="">
+            <img width="23" height="23" class="rotate" src="@img/close_icon.svg" alt="">
         </div>
         <div class="form_left_text f_bold">
             Связаться с нами
@@ -55,41 +55,140 @@
                     <label for="form-modal_tel">Телефон</label>
                 </div>
                 <div class="form_input">
-                    <input class="f_reg" minlength="5"  autocomplete="off"
+                    <input class="f_reg" minlength="5" autocomplete="off"
                         onchange="this.setAttribute('value', this.value);" value="" type="email" name="email"
                         id="form-modal_mail">
                     <label for="form-modal_mail">E-mail</label>
                 </div>
-                    <div class="form_input question_input">
-                   
-                        <textarea value="" onchange="this.setAttribute('value', this.value);" name="question" id="form-modal_question" cols="30" rows="10"></textarea>
-                        <label for="form-modal_question">Ваш вопрос</label>
-                    </div>
+                <div class="form_input question_input">
+
+                    <textarea value="" onchange="this.setAttribute('value', this.value);" name="question"
+                        id="form-modal_question" cols="30" rows="10"></textarea>
+                    <label for="form-modal_question">Ваш вопрос</label>
+                </div>
                 <div class="bottom_part_form">
-            
-                        <button class="call_btn f_reg f-15" type="submit">
-                        Консультация<img loading="lazy" decoding="async" src="img/icon_arrowRight.svg" alt="">
+
+                    <button class="call_btn f_reg f-15" type="submit">
+                        Консультация<img loading="lazy" width="21" height="22" decoding="async" src="img/icon_arrowRight.svg" alt="">
                     </button>
                     <div class="agreement f_reg">Нажимая кнопку «Отправить заявку» я даю свое <br> согласие на обработку
                         персональных данных</div>
-                 
+
 
                 </div>
             </form>
         </div>
     </div>
+    <div class="measurment form_block">
+        <div class="close_modal">
+            <img width="23" height="23" class="rotate" src="@img/close_icon.svg" alt="">
+        </div>
+        <div class="form_left_text f_bold">
+            В ближайшее время вы с Вами свяжемся
+        </div>
+        <div class="form_block_content">
+            <div class="form_block_content_title f_reg f-3">
+                Вызов <br> <span style="color: #F17202;">замерщика</span>
+            </div>
+
+        </div>
+        <div class="form_block_form">
+            <form class="modal_form form_measurment form" action="/send" method="POST">
+                <div class="form_input">
+                    <input class="f_reg" autocomplete="off" onchange="this.setAttribute('value', this.value);" value=""
+                        type="text" name="name" id="form-modal_name">
+                    <label for="form-modal_name">Имя</label>
+                </div>
+                <div class="form_input">
+                    <input class="f_reg" minlength="5" required autocomplete="off"
+                        onchange="this.setAttribute('value', this.value);" value="" type="tel" name="phone"
+                        id="form-modal_tel">
+                    <label for="form-modal_tel">Телефон</label>
+                </div>
+                <div class="form_input">
+                    <input class="f_reg" minlength="5" autocomplete="off"
+                        onchange="this.setAttribute('value', this.value);" value="" type="email" name="email"
+                        id="form-modal_mail">
+                    <label for="form-modal_mail">E-mail</label>
+                </div>
+                <div class="form_input question_input">
+
+                    <textarea value="" onchange="this.setAttribute('value', this.value);" name="question"
+                        id="form-modal_question" cols="30" rows="10"></textarea>
+                    <label for="form-modal_question">Ваши пожелания</label>
+                </div>
+                <div class="bottom_part_form">
+
+                    <button class="call_btn f_reg f-15" type="submit">
+                        Отправить заявку<img loading="lazy" decoding="async" src="@img/zamer__icon.svg" alt="">
+                    </button>
+                    <div class="agreement f_reg">Нажимая кнопку «Отправить заявку» я даю свое <br> согласие на обработку
+                        персональных данных</div>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="product form_block">
+        <div class="close_modal">
+            <img width="23" height="23" class="rotate" src="@img/close_icon.svg" alt="">
+        </div>
+        <div class="form_left_text f_bold">
+            Выбор похожего изделия
+        </div>
+        <div class="form_block_content">
+                <div class="form_product_info">
+                    <div class="form_product_title f-15 f_bold">
+                            asdsa
+                    </div>
+                    <a title="Увеличить" href="" class="form_product_img" data-fslightbox="product" data-loadOnlyCurrentSource ="true">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="" >
+                    </a>
+                    <div class="form_product_params">
+                        <div class="form_product_cat"> </div>
+                        <div class="form_product_year"> </div>
+                        <div class="form_product_price"> </div>
+                    </div>
+                </div>
+
+        </div>
+        <div class="form_block_form">
+            <form class="modal_form form_product form" action="/send" method="POST">
+                <div class="form_input">
+                    <input class="f_reg" autocomplete="off" onchange="this.setAttribute('value', this.value);" value=""
+                        type="text" name="name" id="form-modal_name">
+                    <label for="form-modal_name">Имя</label>
+                </div>
+                <div class="form_input">
+                    <input class="f_reg" minlength="5" required autocomplete="off"
+                        onchange="this.setAttribute('value', this.value);" value="" type="tel" name="phone"
+                        id="form-modal_tel">
+                    <label for="form-modal_tel">Телефон</label>
+                </div>
+                <div class="form_input">
+                    <input class="f_reg" minlength="5" autocomplete="off"
+                        onchange="this.setAttribute('value', this.value);" value="" type="email" name="email"
+                        id="form-modal_mail">
+                    <label for="form-modal_mail">E-mail</label>
+                </div>
+       
+
+                    <button class="call_btn f_reg f-15" type="submit">
+                        Заказать<img loading="lazy" decoding="async" width="21" height="22" src="@img/icon_arrowRight.svg" alt="">
+                    </button>
+                    <div class="agreement f_reg">Нажимая кнопку «Заказать» я даю свое <br> согласие на обработку
+                        персональных данных</div>
+
+
+            </form>
+        </div>
+    </div>
 </div>
 
+<div class="thanks_"> </div>
 
-<script>
-    window.onload = function () {
-        document.body.classList.add('loaded_hiding');
-        window.setTimeout(function () {
-            document.body.classList.add('loaded');
-            document.body.classList.remove('loaded_hiding');
-        }, 500);
-    }
-</script>
+<script> window.onload = function () { document.body.classList.add('loaded_hiding'); window.setTimeout(function () { document.body.classList.add('loaded'); document.body.classList.remove('loaded_hiding'); }, 500); } </script>
 </body>
 
 </html>
