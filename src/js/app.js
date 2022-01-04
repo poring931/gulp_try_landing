@@ -20,9 +20,14 @@ chooseTitleItem.forEach((currentItem,index) => {
             document.querySelector('.form_bottom span').innerText = this.innerText;
             document.querySelector('input[name="form_name"]').value = this.innerText;
             document.querySelector('.choose_title_item.active').classList.remove("active");
+            document.querySelector('.form_bottom .form-1').dataset.formtype = this.dataset.formtype
+
             this.classList.add('active')
-            if(index !=2){
-                Funtions.toggleStyle(document.querySelector('.form_bottom .question_input'),'display', 'none', 'block')
+            if(index == 0){
+              document.querySelector('.form_bottom .question_input').style.display = 'block'
+                // Funtions.toggleStyle(document.querySelector('.form_bottom .question_input'),'display', 'none', 'block')
+            } else {
+              document.querySelector('.form_bottom .question_input').style.display = 'none'
             }
 
           
@@ -169,61 +174,70 @@ products.forEach((product,index) => {
 
 
 
-//  Funtions.showThanksMessageconst('sadsad')
 
-//  $(document).on("submit", ".feedback_bottom", function(e) {
-//         var isModal = false;
-//         if ($(this).parent().parent().attr('class') == 'popup_feedback popup'){
-//             isModal = true;
-//         };
-//         e.preventDefault();
-//         // $(this).attr('action','/wp-content/themes/citymobile/mail.php')
-//         $(this).attr('action','/wp-content/themes/citymobile/phpmailer/mail.php')
-//     let m_method = $(this).attr('method');
-//     let m_action = $(this).attr('action');
-//     let m_data = $(this).serialize();
-//     $.ajax({
-//         type: m_method,
-//         url: m_action,
-//         data: m_data,
-//         dataType: 'JSON',
-//         resetForm: 'true',
-//         beforeSend: function( xhr ) {
-//             $('.form_input button').text('отправляем...')
-//         },
-//         success: function(response) {
-//             // console.log(response)
-//             // Для метрики отслеживание отправки формы из футера или из модалки
-//             if(isModal==false){ym(85906957,'reachGoal','order-form-submit');
-//             }else if(isModal==true){ym(85906957,'reachGoal','callback-form-submit');};
+let message = {
+    loading: 'Отправляется...',
+    failure: 'что-то пошло не так'
+}
+let form_list = document.querySelectorAll('.form'),
+    statusMessage = document.createElement('div');
+
+statusMessage.classList.add('status');
+
+form_list.forEach((form,index) => {
+  
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        let phone_number = this.querySelector('[name="phone"]');
+
+        if (phone_number.value.length == 17 && phone_number.value.indexOf('_')>-1){
+            phone_number.style.color = 'red';
+            phone_number.style.borderColor = 'red';
+            setTimeout(() => {
+                phone_number.style.color = '#000';
+                phone_number.style.borderColor = '#ccc';
+
+            }, 2500);
+        } else {
+
+            let inputs = form.querySelectorAll('input, textarea');
+            form.appendChild(statusMessage);
+            let formtype = this.dataset.formtype;
+            let request = new XMLHttpRequest();
+
+            request.open('POST', `https://loftdc.ru/mail.php?op=${formtype}`);
+            request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+            let formData = new FormData(event.target);
+
+            let obj = {};
+            formData.forEach(function (value,key) {
+                obj[key] = value;
+            });
+            let json = JSON.stringify(obj);
+            console.log(JSON.stringify(obj));
+            console.log(obj);
+            request.send(json);
+            // request.send(formData);
+
             
-//             $('.form_input button').text('Отправить заявку')
-//             $('.thank_for_callback').css('display', 'flex');
-//             modalClose()
-//             setTimeout(function() {
-//                 $('.thank_for_callback').fadeOut('slow');
-//                 $(".feedback_bottom").trigger("reset");
-//                 $('.feedback_bottom input:not([type="checkbox"])').val('')
-//             }, 4000);
-//         },
-//         error: function (jqXHR, exception) {
-//             console.log(jqXHR);
-//             console.log(exception);
-//         if (jqXHR.status === 0) {
-//             alert('Произошла ошибка: Not connect. Verify Network.');
-//         } else if (jqXHR.status == 404) {
-//             alert('Произошла ошибка: Requested page not found (404).');
-//         } else if (jqXHR.status == 500) {
-//             alert('Произошла ошибка: Internal Server Error (500).');
-//         } else if (exception === 'parsererror') {
-//             alert('Произошла ошибка: Requested JSON parse failed.');
-//         } else if (exception === 'timeout') {
-//             alert('Произошла ошибка: Time out error.');
-//         } else if (exception === 'abort') {
-//             alert('Произошла ошибка: Ajax request aborted.');
-//         } else {
-//             alert('Произошла ошибка: Uncaught Error. ' + jqXHR.responseText);
-//         }
-//         }
-//     });
-//     });
+            request.addEventListener('readystatechange',function () {
+                if (request.readyState < 4) {
+                    statusMessage.innerHTML = message.loading;
+                } else if (request.readyState === 4 && request.status == 200) {
+                    Funtions.closeModal()
+                    statusMessage.style.display = 'none';
+                    for (let i = 0; i < inputs.length; i++) {
+                        inputs[i].value = '';
+                    }
+                     Funtions.showThanksMessageconst('Спасибо за Вашу заявку, <br> в ближайшее время с Вами свяжутся')
+                } else {
+                    statusMessage.innerHTML = message.failure;
+                    setTimeout(() => {
+                      statusMessage.style.display = 'none';
+                    }, 4000);
+                }
+            });
+        }
+    });
+});

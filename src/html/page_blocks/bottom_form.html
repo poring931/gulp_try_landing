@@ -1,13 +1,13 @@
 <div class="form_bottom container form_block">
     <div class="form_block_content">
         <div class="choose_title">
-            <div class="choose_title_item f_bold active f-27">
+            <div class="choose_title_item f_bold active f-27" data-formtype="question">
                Задать вопрос
             </div>
-            <div class="choose_title_item f_bold  f-27">
+            <div class="choose_title_item f_bold  f-27" data-formtype="call_bottom">
                Заказать звонок
             </div>
-            <div class="choose_title_item f_bold  f-27">
+            <div class="choose_title_item f_bold  f-27" data-formtype="measurment_bottom">
                Вызвать замерщика
             </div>
      
@@ -15,8 +15,8 @@
      
     </div>
     <div class="form_block_form">
-        <form class="form-1 form" action="/send" method="POST">
-            <input type="text" name="surname" style="display:none;">
+        <form class="form-1 form" action="/send" method="POST" data-formtype="question">
+            <input type="text" name="fio_name" style="display: none;">
             <input type="text" name="form_name" style="display:none;" value="Задать вопрос">
             <div class="form_input">
                 <input class="f_reg" autocomplete="off" onchange="this.setAttribute('value', this.value);" value="" type="text" name="name" id="form-1_name">

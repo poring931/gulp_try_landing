@@ -8,7 +8,8 @@
         </div>
     </div>
     <div class="form_block_form">
-        <form class="form-1 form" action="/send" method="POST">
+        <form class="form-1 form" action="/send" method="POST" data-formtype="question_middle_form">
+            <input type="text" name="fio_name" style="display: none;">
             <div class="form_input">
                 <input class="f_reg" autocomplete="off" onchange="this.setAttribute('value', this.value);" value="" type="text" name="name" id="form-1_name">
                 <label for="form-1_name">Имя</label>
@@ -23,7 +24,7 @@
             </div>
             <div class="agreement f_reg">Нажимая кнопку «Отправить заявку» я даю свое <br> согласие на обработку персональных данных</div>
             <button class="call_btn f_reg f-15" type="submit">
-              Консультация<img loading="lazy" decoding="async" src="img/icon_arrowRight.svg" alt="">
+              Консультация<img loading="lazy" decoding="async" width="21" height="22" src="img/icon_arrowRight.svg" alt="">
             </button>
         </form>
     </div>

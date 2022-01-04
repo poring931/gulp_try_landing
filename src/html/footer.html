@@ -42,7 +42,7 @@
 
         </div>
         <div class="form_block_form">
-            <form class="modal_form form_consultation form" action="/send" method="POST">
+            <form class="modal_form form_consultation form" action="/send" method="POST" data-formtype="consultation">
                 <div class="form_input">
                     <input class="f_reg" autocomplete="off" onchange="this.setAttribute('value', this.value);" value=""
                         type="text" name="name" id="form-modal_name">
@@ -84,7 +84,7 @@
             <img width="23" height="23" class="rotate" src="@img/close_icon.svg" alt="">
         </div>
         <div class="form_left_text f_bold">
-            В ближайшее время вы с Вами свяжемся
+            В ближайшее время мы с Вами свяжемся
         </div>
         <div class="form_block_content">
             <div class="form_block_content_title f_reg f-3">
@@ -93,7 +93,8 @@
 
         </div>
         <div class="form_block_form">
-            <form class="modal_form form_measurment form" action="/send" method="POST">
+            <form class="modal_form form_measurment form" action="/send" method="POST" data-formtype="measurment_modal">
+                <input type="text" name="fio_name" style="display: none;">
                 <div class="form_input">
                     <input class="f_reg" autocomplete="off" onchange="this.setAttribute('value', this.value);" value=""
                         type="text" name="name" id="form-modal_name">
@@ -119,7 +120,7 @@
                 </div>
                 <div class="bottom_part_form">
 
-                    <button class="call_btn f_reg f-15" type="submit">
+                    <button class="call_btn f_bold f-15" type="submit">
                         Отправить заявку<img loading="lazy" decoding="async" src="@img/zamer__icon.svg" alt="">
                     </button>
                     <div class="agreement f_reg">Нажимая кнопку «Отправить заявку» я даю свое <br> согласие на обработку
@@ -139,32 +140,34 @@
         </div>
         <div class="form_block_content">
                 <div class="form_product_info">
-                    <div class="form_product_title f-15 f_bold">
-                            asdsa
+                    <div class="form_product_info_top">
+                        <div class="form_product_title f-15 f_bold">
+                                asdsa
+                        </div>
+                        <div class="form_product_year"> </div>
+
+
                     </div>
-                    <a title="Увеличить" href="" class="form_product_img" data-fslightbox="product" data-loadOnlyCurrentSource ="true">
+              
+                    <a title="Увеличить" href="" class="form_product_img"  data-fslightbox="product"  data-custom-class="fslightbox-custom" data-loadOnlyCurrentSource ="true">
                         <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="" >
                     </a>
                     <div class="form_product_params">
                         <div class="form_product_cat"> </div>
-                        <div class="form_product_year"> </div>
-                        <div class="form_product_price"> </div>
+                        <div class="form_product_price f_bold"> </div>
                     </div>
                 </div>
 
         </div>
         <div class="form_block_form">
-            <form class="modal_form form_product form" action="/send" method="POST">
+            <form class="modal_form form_product form" action="/send" method="POST" data-formtype="get_product">
+                <input type="text" name="fio_name" style="display: none;">
+                <input type="text" name="prod_name"   style="display: none;">
+                <input type="text" name="prod_img"  style="display: none;">
                 <div class="form_input">
                     <input class="f_reg" autocomplete="off" onchange="this.setAttribute('value', this.value);" value=""
                         type="text" name="name" id="form-modal_name">
                     <label for="form-modal_name">Имя</label>
-                </div>
-                <div class="form_input">
-                    <input class="f_reg" minlength="5" required autocomplete="off"
-                        onchange="this.setAttribute('value', this.value);" value="" type="tel" name="phone"
-                        id="form-modal_tel">
-                    <label for="form-modal_tel">Телефон</label>
                 </div>
                 <div class="form_input">
                     <input class="f_reg" minlength="5" autocomplete="off"
@@ -172,6 +175,13 @@
                         id="form-modal_mail">
                     <label for="form-modal_mail">E-mail</label>
                 </div>
+                <div class="form_input">
+                    <input class="f_reg" minlength="5" required autocomplete="off"
+                        onchange="this.setAttribute('value', this.value);" value="" type="tel" name="phone"
+                        id="form-modal_tel">
+                    <label for="form-modal_tel">Телефон</label>
+                </div>
+
        
 
                     <button class="call_btn f_reg f-15" type="submit">

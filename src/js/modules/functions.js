@@ -66,17 +66,20 @@ export const showThanksMessageconst = (text=`Спасибо за заявку, <
     thanks.style.opacity = '1';
     setTimeout(() => {
         thanks.style.opacity = '0';
-    }, 3400);
+    }, 5400);
 }
 export const productAttrToModal = (title, price='', cat, year, src='') => {
     document.querySelector('.form_product_title').innerText = title;
     document.querySelector('.form_product_price').innerText = price;
     document.querySelector('.form_product_cat').innerText = cat;
     document.querySelector('.form_product_year').innerText = year;
-    console.log(src);
+     document.querySelector('[name="prod_name"]').value = title;
     let img_original = src.replace('-sm','').replace('-md','').replace('-lg',''),
         img_medium = src;
+     document.querySelector('[name="prod_img"]').value = img_original;
+
     document.querySelector('.form_product_img img').src = img_original.replace('.webp','-sm.webp');
     document.querySelector('.form_product_img').href = img_original;
     refreshFsLightbox();
+    
 }

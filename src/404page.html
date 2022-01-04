@@ -5,13 +5,16 @@
     })
 <body>
     @@include('html/header.html',{})
-     @@include('html/page_blocks/index_banner.html',{})
 
     <main>
 
-        
-        <h1>Страница не найдена</h1>
+        <div class="contaier">
+              <h1>Страница не найдена</h1>
         <a href="/">Перейти на главную</a>
+        </div>
+      
+        @@include('html/page_blocks/open_form_1.html',{})
+
     </main>
 
 
