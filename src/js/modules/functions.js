@@ -83,3 +83,10 @@ export const productAttrToModal = (title, price='', cat, year, src='') => {
     refreshFsLightbox();
     
 }
+
+
+export  function openSelectorModal(selector) {
+    document.querySelector(`.${selector}`).addEventListener('click',function (e) {
+      openModal(`${selector}`)
+    })
+}

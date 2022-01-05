@@ -1,22 +1,22 @@
 <footer class="footer">
     <div class="container">
         <div class="header_block">
-            <div class="header-logo">
+            <div class="header-logo slideUp">
                 <a href="https://loftdc.ru/">
                     <img width="364" height="60" src="@img/logo.svg" alt="Loft mebee">
                 </a>
             </div>
-            <div class="header-inst f-2 f_light">
+            <div class="header-inst f-2 f_light slideUp">
                 <a href="mailto:pochta@mail.ru">
-                    pochta@mail.ru
+                    loftdc@mail.ru
                 </a>
             </div>
-            <div class="header-inst f-075">
+            <div class="header-inst f-075 slideUp">
                 <a href="https://www.instagram.com/loft_dc/" target="_blank">
                     Instagram
                 </a>
             </div>
-            <div class="header-contacts f_bold ">
+            <div class="header-contacts f_bold slideUp">
                 <a href="tel:+74999386141">
                     +7 499 938-61-41
                 </a>
@@ -42,25 +42,25 @@
 
         </div>
         <div class="form_block_form">
-            <form class="modal_form form_consultation form" action="/send" method="POST" data-formtype="consultation">
-                <div class="form_input">
+            <form novalidate class="modal_form form_consultation form" action="/send" method="POST" data-formtype="consultation">
+                <div class="form_input ">
                     <input class="f_reg" autocomplete="off" onchange="this.setAttribute('value', this.value);" value=""
                         type="text" name="name" id="form-modal_name">
                     <label for="form-modal_name">Имя</label>
                 </div>
-                <div class="form_input">
+                <div class="form_input ">
                     <input class="f_reg" minlength="5" required autocomplete="off"
                         onchange="this.setAttribute('value', this.value);" value="" type="tel" name="phone"
                         id="form-modal_tel">
                     <label for="form-modal_tel">Телефон</label>
                 </div>
-                <div class="form_input">
+                <div class="form_input ">
                     <input class="f_reg" minlength="5" autocomplete="off"
                         onchange="this.setAttribute('value', this.value);" value="" type="email" name="email"
                         id="form-modal_mail">
                     <label for="form-modal_mail">E-mail</label>
                 </div>
-                <div class="form_input question_input">
+                <div class="form_input  question_input">
 
                     <textarea value="" onchange="this.setAttribute('value', this.value);" name="question"
                         id="form-modal_question" cols="30" rows="10"></textarea>
@@ -73,13 +73,11 @@
                     </button>
                     <div class="agreement f_reg">Нажимая кнопку «Отправить заявку» я даю свое <br> согласие на обработку
                         персональных данных</div>
-
-
                 </div>
             </form>
         </div>
     </div>
-    <div class="measurment form_block">
+    <div class="measurment form_block get_measure">
         <div class="close_modal">
             <img width="23" height="23" class="rotate" src="@img/close_icon.svg" alt="">
         </div>
@@ -93,26 +91,26 @@
 
         </div>
         <div class="form_block_form">
-            <form class="modal_form form_measurment form" action="/send" method="POST" data-formtype="measurment_modal">
+            <form novalidate class="modal_form form_measurment form" action="/send" method="POST" data-formtype="measurment_modal">
                 <input type="text" name="fio_name" style="display: none;">
-                <div class="form_input">
+                <div class="form_input ">
                     <input class="f_reg" autocomplete="off" onchange="this.setAttribute('value', this.value);" value=""
                         type="text" name="name" id="form-modal_name">
                     <label for="form-modal_name">Имя</label>
                 </div>
-                <div class="form_input">
+                <div class="form_input ">
                     <input class="f_reg" minlength="5" required autocomplete="off"
                         onchange="this.setAttribute('value', this.value);" value="" type="tel" name="phone"
                         id="form-modal_tel">
                     <label for="form-modal_tel">Телефон</label>
                 </div>
-                <div class="form_input">
+                <div class="form_input ">
                     <input class="f_reg" minlength="5" autocomplete="off"
                         onchange="this.setAttribute('value', this.value);" value="" type="email" name="email"
                         id="form-modal_mail">
                     <label for="form-modal_mail">E-mail</label>
                 </div>
-                <div class="form_input question_input">
+                <div class="form_input  question_input">
 
                     <textarea value="" onchange="this.setAttribute('value', this.value);" name="question"
                         id="form-modal_question" cols="30" rows="10"></textarea>
@@ -127,6 +125,55 @@
                         персональных данных</div>
 
 
+                </div>
+            </form>
+        </div>
+    </div>
+      <div class="get_measure_own_size form_block ">
+        <div class="close_modal">
+            <img width="23" height="23" class="rotate" src="@img/close_icon.svg" alt="">
+        </div>
+        <div class="form_left_text f_bold">
+            Можно прикрепить рисунок\фотографию изделия
+        </div>
+        <div class="form_block_content">
+            <div class="form_block_content_title f_reg f-3">
+                Заказать по  <br> <span style="color: #F17202;"> собственным размерам</span>
+            </div>
+
+        </div>
+        <div class="form_block_form">
+            <form novalidate class="modal_form form_measurment form" action="/send" method="POST"  enctype="multipart/form-data" data-formtype="get_measure_own_size">
+                <input type="text" name="fio_name" style="display: none;">
+              
+                <div class="form_input ">
+                    <input class="f_reg" minlength="5" required autocomplete="off"
+                        onchange="this.setAttribute('value', this.value);" value="" type="tel" name="phone"
+                        id="form-modal_tel">
+                    <label for="form-modal_tel">Телефон</label>
+                </div>
+                <div class="form_input ">
+                    <input class="f_reg" minlength="5" autocomplete="off"
+                        onchange="this.setAttribute('value', this.value);" value="" type="email" name="email"
+                        id="form-modal_mail">
+                    <label for="form-modal_mail">E-mail</label>
+                </div>
+            
+                <div class="form_input  question_input">
+
+                    <textarea value="" onchange="this.setAttribute('value', this.value);" name="question"
+                        id="form-modal_question" cols="30" rows="10"></textarea>
+                    <label for="form-modal_question">Комментарий</label>
+                </div>
+                <div >
+                    <input class="file_input" type="file" name="file" id="file-input" style="border-bottom:none" accept="image/png, image/gif, image/jpeg">
+                </div>
+                <div class="bottom_part_form">
+                    <button class="call_btn f_bold f-15" type="submit">
+                        Отправить заявку<img loading="lazy" decoding="async" src="@img/zamer__icon.svg" alt="">
+                    </button>
+                    <div class="agreement f_reg">Нажимая кнопку «Отправить заявку» я даю свое <br> согласие на обработку
+                        персональных данных</div>
                 </div>
             </form>
         </div>
@@ -160,22 +207,22 @@
 
         </div>
         <div class="form_block_form">
-            <form class="modal_form form_product form" action="/send" method="POST" data-formtype="get_product">
+            <form novalidate class="modal_form form_product form" action="/send" method="POST" data-formtype="get_product">
                 <input type="text" name="fio_name" style="display: none;">
                 <input type="text" name="prod_name"   style="display: none;">
                 <input type="text" name="prod_img"  style="display: none;">
-                <div class="form_input">
+                <div class="form_input ">
                     <input class="f_reg" autocomplete="off" onchange="this.setAttribute('value', this.value);" value=""
                         type="text" name="name" id="form-modal_name">
                     <label for="form-modal_name">Имя</label>
                 </div>
-                <div class="form_input">
+                <div class="form_input ">
                     <input class="f_reg" minlength="5" autocomplete="off"
                         onchange="this.setAttribute('value', this.value);" value="" type="email" name="email"
                         id="form-modal_mail">
                     <label for="form-modal_mail">E-mail</label>
                 </div>
-                <div class="form_input">
+                <div class="form_input ">
                     <input class="f_reg" minlength="5" required autocomplete="off"
                         onchange="this.setAttribute('value', this.value);" value="" type="tel" name="phone"
                         id="form-modal_tel">
@@ -194,11 +241,66 @@
             </form>
         </div>
     </div>
+      <div class="question_modal form_block">
+        <div class="close_modal">
+            <img width="23" height="23" class="rotate" src="@img/close_icon.svg" alt="">
+        </div>
+        <div class="form_left_text f_bold">
+            Отправьте нам Ваш вопрос
+        </div>
+        <div class="form_block_content">
+            <div class="form_block_content_title f_reg f-2">
+                Ответим на <br> <span style="color: #F17202;">любые вопросы</span>
+            </div>
+
+        </div>
+        <div class="form_block_form">
+            <form novalidate class="modal_form form_consultation form" action="/send" method="POST" data-formtype="modal_consultation">
+                <div class="form_input ">
+                    <input class="f_reg" autocomplete="off" onchange="this.setAttribute('value', this.value);" value=""
+                        type="text" name="name" id="form-modal_name">
+                    <label for="form-modal_name">Имя</label>
+                </div>
+                <div class="form_input ">
+                    <input class="f_reg" minlength="5" required autocomplete="off"
+                        onchange="this.setAttribute('value', this.value);" value="" type="tel" name="phone"
+                        id="form-modal_tel">
+                    <label for="form-modal_tel">Телефон</label>
+                </div>
+                <div class="form_input ">
+                    <input class="f_reg" minlength="5" autocomplete="off"
+                        onchange="this.setAttribute('value', this.value);" value="" type="email" name="email"
+                        id="form-modal_mail">
+                    <label for="form-modal_mail">E-mail</label>
+                </div>
+                <div class="form_input  question_input">
+
+                    <textarea value="" onchange="this.setAttribute('value', this.value);" name="question"
+                        id="form-modal_question" cols="30" rows="10"></textarea>
+                    <label for="form-modal_question">Ваш вопрос</label>
+                </div>
+                <div class="bottom_part_form">
+
+                    <button class="call_btn f_reg f-15" type="submit">
+                        Отправить<img loading="lazy" width="21" height="22" decoding="async" src="img/icon_arrowRight.svg" alt="">
+                    </button>
+                    <div class="agreement f_reg">Нажимая кнопку «Отправить заявку» я даю свое <br> согласие на обработку
+                        персональных данных</div>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
 <div class="thanks_"> </div>
 
 <script> window.onload = function () { document.body.classList.add('loaded_hiding'); window.setTimeout(function () { document.body.classList.add('loaded'); document.body.classList.remove('loaded_hiding'); }, 500); } </script>
+
+
+
+
+    <script src="js/app.min.js"></script>
+
 </body>
 
 </html>

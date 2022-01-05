@@ -15,22 +15,22 @@
      
     </div>
     <div class="form_block_form">
-        <form class="form-1 form" action="/send" method="POST" data-formtype="question">
+        <form novalidate class="form-1 form" action="/send" method="POST" data-formtype="question">
             <input type="text" name="fio_name" style="display: none;">
             <input type="text" name="form_name" style="display:none;" value="Задать вопрос">
-            <div class="form_input">
+            <div class="form_input fadeIn">
                 <input class="f_reg" autocomplete="off" onchange="this.setAttribute('value', this.value);" value="" type="text" name="name" id="form-1_name">
                 <label for="form-1_name">Имя</label>
             </div>
-            <div class="form_input">
-                <input class="f_reg" minlength="5" required autocomplete="off" onchange="this.setAttribute('value', this.value);" value="" type="tel" name="phone" id="form-1_tel" >
+            <div class="form_input fadeIn">
+                <input class="f_reg" minlength="5" required autocomplete="off" onchange="this.setAttribute('value', this.value);" value="" type="tel" name="phone"  id="form-1_tel" >
                 <label for="form-1_tel">Телефон</label>
             </div>
-            <div class="form_input question_input">
+            <div class="form_input question_input fadeIn">
                 <input class="f_reg" autocomplete="off" onchange="this.setAttribute('value', this.value);" value="" type="text" name="question" id="form-1_question" >
                 <label for="form-1_question">Вопрос</label>
             </div>
-            <div class="agreement f_reg">Нажимая кнопку «Отправить заявку» я даю свое <br> согласие на обработку персональных данных</div>
+            <div class="agreement f_reg fadeIn">Нажимая кнопку «Отправить заявку» я даю свое <br> согласие на обработку персональных данных</div>
             <button class="call_btn f_reg f-15" type="submit">
               <span>Задать вопрос</span><img loading="lazy" decoding="async" src="img/icon_arrowRight.svg" alt="">
             </button>
