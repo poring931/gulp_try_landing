@@ -29,3 +29,11 @@
                 <source srcset="@img/NAME_PICTURE.webp" type="image/webp" />
                 <img src="@img/NAME_PICTURE.jpg" class="" alt="" />
             </picture>
+
+
+#Результаты:
+
+## Пк версия 
+![Image alt](https://github.com/poring931/gulp_try_landing/raw/main/src/files/pc_pageSpeed.png) 
+
+## Мобильная версия также 98-100 баллов, но адаптив пока нет
