@@ -36,7 +36,7 @@ body {
     font-family: Jeko, "PT Sans", "Arial", serif;
     font-weight: 500;
     color: $main_text_c;
-
+    width: 100vw;
     a {
         text-decoration: none;
         color: inherit;
@@ -213,6 +213,9 @@ body {
         left: -4%;
         z-index: -1;
         top: -308px;
+            width: 100vw;
+    // overflow: hidden;
+    white-space: pre;
     }
 
     .our_last_works_title {
@@ -414,6 +417,9 @@ body {
         width: max-content;
         left: -9%;
         top: -187px;
+            width: 100vw;
+    // overflow: hidden;
+    white-space: pre;
 
     }
 
@@ -803,11 +809,10 @@ body {
 
 img.fslightbox-source {
     transition: 0.2s ease;
-    transform: scale(1.5);
 }
 
 img.fslightbox-custom {
-    transform: scale(1);
+    // transform: scale(1.5);
 
 }
 
@@ -1017,6 +1022,7 @@ body.no_overlay {
         .file_input::before {
             content: 'Загрузите файл';
             display: inline-block;
+            transition: 0.3s linear;
             background: #f172028c;
             border: none;
             border-radius: 3px;
@@ -1028,11 +1034,12 @@ body.no_overlay {
         }
 
         .file_input:hover::before {
-            border-color: black;
+            border-color: $hover_text_c;
+              background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
         }
 
         .file_input:active::before {
-            background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+            background: -webkit-linear-gradient(top, #e3e3e3, #eca64a);
         }
 
     }
@@ -1093,17 +1100,17 @@ body.no_overlay {
             border-color: #F17202;
 
             img {
-                transform: scale(1.3);
+                transform: scale(1.3) translateY(-5%)
             }
         }
     }
 
     .grid-item:nth-child(even) {
-        height: 240px;
+        // height: 360px;
     }
 
     .grid-item:nth-child(odd) {
-        height: 480px;
+        // height: 520px;
     }
 
     .grid-item {
@@ -1144,6 +1151,9 @@ body.no_overlay {
 @media (max-width:1550px) {
     .f-27 {
         font-size: 2.4rem;
+    }
+     .f-15 {
+        font-size: 1.3rem;
     }
 
     html {
@@ -1230,25 +1240,28 @@ body.no_overlay {
             }
         }
     }
-    .reviews_block{
-    .swiper-button-next {
-        right: 53px;
+
+    .reviews_block {
+        .swiper-button-next {
+            right: 53px;
+        }
+
+        .swiper-button-prev {
+            right: 103px;
+        }
     }
-    .swiper-button-prev {
-        right: 103px;
-    }
-} 
 }
 
 
 
 @media (max-width:1330px) {
     .container {
-    padding-left: 30px;
- 
-    padding-right: 30px;
-}
-        .our_last_works_products {
+        padding-left: 30px;
+
+        padding-right: 30px;
+    }
+
+    .our_last_works_products {
         .our_last_works_products_left {
             .our_last_works_products_item:nth-child(odd) .our_last_works_products_item_img {
                 max-height: 60vh;
@@ -1261,45 +1274,62 @@ body.no_overlay {
             }
         }
     }
-    html{
+
+    html {
         font-size: 18px;
     }
-    .f-15 {
-    font-size: 1.3rem;
-}
-.f-3 {
-    font-size: 2.5rem;
-}
+
+   
+
+    .f-3 {
+        font-size: 2.5rem;
+    }
 
     .banner_grid {
-    margin: 51px 0 0px;
+        margin: 51px 0 0px;
         grid-template-columns: 1.3fr 0.9fr;
+
         .banner_about_title {
-    font-size: 2.2rem;
-    b{
-            top: -26px;
+            font-size: 2.2rem;
+
+            b {
+                top: -26px!important;
+            }
+        }
     }
-}
-}
-.our_last_works{
-    gap: 0;
- .our_last_works_products {
-    gap: 54px;
-}
-.our_last_works_products_item_cat{
-    font-size: 0.9rem;
-}
-}
-.form_block {
-    .form {
-    gap: 36px;
-}
-}
-.form_block .form textarea {
-   
-    height: 100px;
-}
-.modal_wrapper .form_block {
-    grid-template-columns: 83px 0.5fr 1fr;
-}
+
+    .our_last_works {
+        gap: 0;
+
+        .our_last_works_products {
+            gap: 54px;
+        }
+
+        .our_last_works_products_item_cat {
+            font-size: 0.9rem;
+        }
+    }
+
+    .form_block {
+        .form {
+            gap: 36px;
+        }
+    }
+
+    .form_block .form textarea {
+
+        height: 100px;
+    }
+
+    .modal_wrapper{
+         .get_measure_own_size .call_btn {
+                font-size: 1.2rem;
+            }
+               .form_block {
+        grid-template-columns: 83px 0.5fr 1fr;
+    }
+    } 
+    
+    
+ 
 }

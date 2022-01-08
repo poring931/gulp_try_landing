@@ -85,8 +85,10 @@ export const productAttrToModal = (title, price='', cat, year, src='') => {
 }
 
 
-export  function openSelectorModal(selector) {
-    document.querySelector(`.${selector}`).addEventListener('click',function (e) {
-      openModal(`${selector}`)
-    })
+export  function openSelectorModalByClick(selector) {
+    document.querySelectorAll(`.${selector}:not(.form_block)`).forEach((formName, index) => {
+        formName.addEventListener('click', function (e) {
+            openModal(`${selector}.form_block`)
+        })
+    });
 }

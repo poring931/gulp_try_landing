@@ -71,11 +71,11 @@ let swiper = new Swiper(".reviews_block", {
     },
     // when window width is >= 480px
     1100: {
-      slidesPerView: 4,
+      slidesPerView: 5,
       spaceBetween: 60
     },
     1340: {
-      slidesPerView: 5,
+      slidesPerView: 6,
       spaceBetween: 50
     },
     // when window width is >= 640px
@@ -92,16 +92,14 @@ let swiper = new Swiper(".reviews_block", {
 document.addEventListener("DOMContentLoaded", function (event) {
 
   Funtions.asyncCSS('/files/swiper.css');
-  Funtions.asyncJs("/files/imagesloaded.pkgd.min.js");
 
 
   setTimeout(() => {
     //фансибокс для отзывов
-    // Funtions.asyncJs("/files/skroll.min.js");
     Funtions.asyncJs("/files/fslightbox.js");
   }, 2500);
 
-  function addScriptScroll(url) {
+  function addScriptScroll(url) {//скрипт для анимации при скроле
     return new Promise((resolve, reject) => {
 
       Funtions.asyncCSS('/files/t-scroll.min.css');
@@ -152,34 +150,38 @@ document.addEventListener("DOMContentLoaded", function (event) {
   addScriptScroll("/files/t-scroll.min.js")
 
 
+  if(window.innerWidth > 600){//масорни сетка для отзывов
+  Funtions.asyncJs("/files/imagesloaded.pkgd.min.js");
 
-  setTimeout(() => {
-    function addScriptMasonry(url) {
-      return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      function addScriptMasonry(url) {
+        return new Promise((resolve, reject) => {
 
-        Funtions.asyncCSS('/files/t-scroll.min.css');
 
-        let script = document.createElement("script")
-        script.type = "text/javascript";
-        script.async = true;
-        script.onload = function () {
-          var grid = document.querySelector('.grid');
-          var msnry;
-          imagesLoaded(grid, function () {
-            msnry = new Masonry(grid, {
-              itemSelector: '.grid-item',
-              columnWidth: '.grid-item',
-              percentPosition: false
+          let script = document.createElement("script")
+          script.type = "text/javascript";
+          script.async = true;
+          script.onload = function () {
+            var grid = document.querySelector('.grid');
+            var msnry;
+            imagesLoaded(grid, function () {
+              msnry = new Masonry(grid, {
+                itemSelector: '.grid-item',
+                columnWidth: '.grid-item',
+                percentPosition: false
+              });
             });
-          });
-        };
+          };
 
-        script.src = url;
-        document.getElementsByTagName("head")[0].appendChild(script);
-      });
-    }
-    addScriptMasonry("/files/masonry.pkgd.min.js")
-  }, 1500);
+          script.src = url;
+          document.getElementsByTagName("head")[0].appendChild(script);
+        });
+      }
+      addScriptMasonry("/files/masonry.pkgd.min.js")
+    }, 1500);
+  } else {
+    // будет слайдер
+  }
 
   
 
@@ -235,24 +237,8 @@ filters.forEach(filter => {
 
 
 
-//работа с формами
-
-let close_form = document.querySelectorAll('.close_modal, .overlay_');
-close_form.forEach((currentItem, index) => {
-  currentItem.addEventListener('click', function (e) {
-    Funtions.closeModal()
-  })
-});
-Funtions.openSelectorModal('get_measure_own_size')
-Funtions.openSelectorModal('question_modal')
-Funtions.openSelectorModal('get_measure')
-Funtions.openSelectorModal('modal_consultation')
-
-
 
 //работа с товарами
-
-
 let products = document.querySelectorAll('.our_last_works_products_item');
 products.forEach((product, index) => {
   product.addEventListener('click', function (e) {
@@ -273,6 +259,21 @@ products.forEach((product, index) => {
 
 
 
+//работа с формами
+
+let close_form = document.querySelectorAll('.close_modal, .overlay_');
+close_form.forEach((closeForm, index) => {
+  closeForm.addEventListener('click', function (e) {
+    Funtions.closeModal()
+  })
+});
+Funtions.openSelectorModalByClick('get_measure_own_size')
+Funtions.openSelectorModalByClick('question_modal')
+Funtions.openSelectorModalByClick('get_measure')
+Funtions.openSelectorModalByClick('modal_consultation')
+
+
+
 let message = {
   loading: 'Отправляется...',
   failure: 'что-то пошло не так'
@@ -286,7 +287,6 @@ form_list.forEach((form, index) => {
   form.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    // let phone_number = this.querySelector('[name="phone"]');
     let phone_number = event.target.querySelector('[name="phone"]');
 
     if (phone_number.value.length != 17 || phone_number.value.indexOf('_') > -1 || phone_number.value.length =='') {
