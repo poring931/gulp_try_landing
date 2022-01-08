@@ -1,5 +1,13 @@
 # Первый проект с ипользованием ранее настроенного gulp для Сайта https://loftdc.ru/
 
+#Результаты:
+
+## Пк версия 
+![Image alt](https://github.com/poring931/gulp_try_landing/raw/main/src/files/pc_pageSpeed.png) 
+
+## Мобильная версия также 98-100 баллов, но адаптив пока нет
+
+
 # Gulp: scss, webp, html, js, optimized
 Основа для проекта с использованием scss. Все изображения переводятся в webp + оптимизация. Сжимаются стили,js файлы. Есть функционал создания спрайтов SVG
 
@@ -31,9 +39,3 @@
             </picture>
 
 
-#Результаты:
-
-## Пк версия 
-![Image alt](https://github.com/poring931/gulp_try_landing/raw/main/src/files/pc_pageSpeed.png) 
-
-## Мобильная версия также 98-100 баллов, но адаптив пока нет
