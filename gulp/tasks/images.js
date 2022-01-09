@@ -19,6 +19,7 @@ export const images = () => {
         formats: [
     
         // webp
+        { width: 375, format: "webp", rename: { suffix: "-375" } },
         { width: 450, format: "webp", rename: { suffix: "-mobile" } },
         { width: 560, format: "webp", rename: { suffix: "-sm" } },
         { width: 768, format: "webp", rename: { suffix: "-md" } },
