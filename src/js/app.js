@@ -55,8 +55,8 @@ let swiper = new Swiper(".reviews_block", {
     disableOnInteraction: false,
   },
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".reviews-button-next",
+    prevEl: ".reviews-button-prev",
   },
   breakpoints: {
     // when window width is >= 480px
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   setTimeout(() => {
     //фансибокс для отзывов
     Funtions.asyncJs("/files/fslightbox.js");
-  }, 2500);
+  }, 3500);
 
   function addScriptScroll(url) {//скрипт для анимации при скроле
     return new Promise((resolve, reject) => {
@@ -196,23 +196,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
       addScriptMasonry("/files/masonry.pkgd.min.js")
     }, 1500);
   } else {
+    document.querySelectorAll('.grid-item').forEach(item =>(item.classList.add('swiper-slide')))
     // будет слайдер
-    let swiper2 = new Swiper(".grid", {
+      let swiper2 = new Swiper(".our_works_block_masonry", {
         direction: 'horizontal',
         freeMode: true,
         grabCursor: true,
+        autoHeight: true,
+        effect:'cards',
         watchOverflow: true,
         loop: true,
          slidesPerView: 1,
-            spaceBetween: 30,
-            effect: "coverflow",
-              grabCursor: true,
-              coverflowEffect: {
-                rotate: 50,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-              },
+            spaceBetween: 40,
+        
         autoplay: {
           delay: 2500,
           disableOnInteraction: false,

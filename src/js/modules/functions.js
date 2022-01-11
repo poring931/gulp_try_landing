@@ -45,6 +45,7 @@ export function openModal(name = ''){
     }
     document.querySelector('.overlay_').style.cssText = "opacity:1; z-index:2; pointer-events:inherit;"
     document.querySelector('body').classList.add('no_overlay')
+    document.querySelector('html').classList.add('no_overlay')
     document.querySelector('.modal_wrapper').classList.add('active')
 
   
@@ -56,6 +57,7 @@ export function closeModal(){
     }
     document.querySelector('.overlay_').style.cssText = "opacity:0; z-index:-1; pointer-events:none;"
     document.querySelector('body').classList.remove('no_overlay')
+    document.querySelector('html').classList.remove('no_overlay')
     document.querySelector('.modal_wrapper').classList.remove('active')
 
 }

@@ -48,10 +48,8 @@ export const scss = () => {
     )
     .pipe(app.gulp.dest(app.path.build.css))//раскоментировать, если нужен второй файл стилей не сжатый
     .pipe(
-        app.plugins.if(
-            app.isBuild,
+   
             cleanCss()
-        )
     )
     .pipe(rename({
         extname: ".min.css"
