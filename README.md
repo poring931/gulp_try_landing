@@ -6,7 +6,7 @@
 ![Image alt](https://github.com/poring931/gulp_try_landing/raw/main/src/files/pc_googlepagespeed.png) 
 
 ## Мобильная версия
-![Image alt](https://github.com/poring931/gulp_try_landing/raw/main/src/files/mobile_googlepagespeed.png.png) 
+![Image alt](https://github.com/poring931/gulp_try_landing/raw/main/src/files/mobile_googlepagespeed.png) 
 
 
 # Gulp: scss, webp, html, js, optimized
