@@ -3,9 +3,10 @@
 # Результаты:
 
 ## Пк версия 
-![Image alt](https://github.com/poring931/gulp_try_landing/raw/main/src/files/pc_pageSpeed.png) 
+![Image alt](https://github.com/poring931/gulp_try_landing/raw/main/src/files/pc_googlepagespeed.png) 
 
-## Мобильная версия также 98-100 баллов, но адаптив пока нет
+## Мобильная версия
+![Image alt](https://github.com/poring931/gulp_try_landing/raw/main/src/files/mobile_googlepagespeed.png.png) 
 
 
 # Gulp: scss, webp, html, js, optimized
