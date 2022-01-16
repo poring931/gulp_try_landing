@@ -18,6 +18,7 @@ global.app = {
 
 //импорт задач
 import { copy } from "./gulp/tasks/copy.js";
+import { copyRootFile } from "./gulp/tasks/copyRootFile.js";
 import { reset } from "./gulp/tasks/reset.js";
 import { html } from "./gulp/tasks/html.js"; 
 import { server } from "./gulp/tasks/server.js"; 
@@ -33,6 +34,7 @@ import { ftp } from "./gulp/tasks/ftp.js";
 //наблюдатель
 function watcher() {
     gulp.watch(path.watch.files, copy);
+    gulp.watch(path.watch.filesRoot, copyRootFile);
     gulp.watch(path.watch.html, html);
     //gulp.watch(path.watch.html, gulp.series(html, ftp));//для постоянного закидывания на сервер - повторить для всех тасков
     gulp.watch(path.watch.scss, scss);
@@ -46,7 +48,7 @@ export {svgSpriteIcons}//для запуска создания спрайта S
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle );
 
 //основные задачи
-const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images));
+const mainTasks = gulp.series(fonts, gulp.parallel(copy, copyRootFile, html, scss, js, images));
 
 //построение сценариев
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));

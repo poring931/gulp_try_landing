@@ -313,6 +313,7 @@ close_form.forEach((closeForm, index) => {
 Funtions.openSelectorModalByClick('get_measure_own_size')
 Funtions.openSelectorModalByClick('question_modal')
 Funtions.openSelectorModalByClick('get_measure')
+Funtions.openSelectorModalByClick('get_measure_2')
 Funtions.openSelectorModalByClick('modal_consultation')
 
 
@@ -353,9 +354,10 @@ form_list.forEach((form, index) => {
       let formData = new FormData(event.target);
       request.send(formData);
 
-
+      
 
       request.addEventListener('readystatechange', function () {
+
         if (request.readyState < 4) {
           statusMessage.innerHTML = message.loading;
         } else if (request.readyState === 4 && request.status == 200) {
@@ -364,6 +366,38 @@ form_list.forEach((form, index) => {
           for (let i = 0; i < inputs.length; i++) {
             inputs[i].value = '';
           }
+
+          if (formtype == 'consultation'){
+              ym(87164859,'reachGoal','zakazat_zvonok_v_wapre')
+          }
+          if (formtype == 'measurment_modal'){
+              ym(87164859,'reachGoal','bespalatnuy_zamer')
+          }
+          if (formtype == 'measurment_modal_2'){
+              ym(87164859,'reachGoal','vizvat_zamer_knopka')
+          }
+          if (formtype == 'modal_consultation'){
+              ym(87164859,'reachGoal','zadat_vopros_knopka')
+          }
+          if (formtype == 'get_measure_own_size'){
+              ym(87164859,'reachGoal','zakazat_po_moim_razmerom_knopka')
+          }
+          if (formtype == 'get_product'){
+              ym(87164859,'reachGoal','zayvka_last_raboti')
+          }
+          if (formtype == 'question_middle_form'){
+              ym(87164859,'reachGoal','zayvka_na_maket')
+          }
+          if (formtype == 'question'){
+              ym(87164859,'reachGoal','zadat_vopros_podval')
+          }
+          if (formtype == 'call_bottom'){
+              ym(87164859,'reachGoal','zakazat_zvonok_podval')
+          }
+          if (formtype == 'measurment_bottom'){
+              ym(87164859,'reachGoal','vizvat_zamer_v_podvale')
+          }
+
           Funtions.showThanksMessageconst('Спасибо за Вашу заявку, <br> в ближайшее время с Вами свяжутся')
         } else {
           statusMessage.innerHTML = message.failure;

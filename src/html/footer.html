@@ -11,10 +11,17 @@
                     loftdc@mail.ru
                 </a>
             </div>
-            <div class="header-inst  f-075 slideUp">
-                <a href="https://www.instagram.com/loft_dc/" target="_blank">
-                    Instagram
-                </a>
+            <div class="header-inst socials_icons f-075 slideUp">
+                         <a href="https://www.instagram.com/loft_dc/" target="_blank">
+                <img src="@img/inst_logo.svg" alt="Instagram">
+            </a>
+            <a href="https://wa.me/79995220330?text=Добрый день" target="_blank">
+                <img src="@img/whatsapp_logo.svg" alt="WhatsApp">
+            </a>
+            <a href="tg://resolve?domain=managermebel" target="_blank">
+                <img src="@img/telegram_logo.svg" alt="Telegram">
+            </a>
+
             </div>
             <div class="header-contacts f_bold slideUp">
                 <a href="tel:+74999386141">
@@ -25,10 +32,13 @@
         </div>
     </div>
     <div class="container copyright ">
-        <div class="copyright_text f_bold f-075">
+        <div class="copyright_text f_medium f-075">
             © Copyright loftdc.ru 2022
         </div>
-            <div class="heade_call modal_consultation f-075">
+        <div class="address f_bold f-075">
+          <img src="@img/position_icon.svg" alt=""> Москва, Иловайская ул., 5Бс3
+        </div>
+        <div class="heade_call modal_consultation f-075">
             Заказать звонок
         </div>
     </div>
@@ -62,6 +72,56 @@
                         id="form-modal_tel">
                     <label for="form-modal_tel">Телефон</label>
                 </div>
+                <!-- <div class="form_input ">
+                    <input class="f_reg" minlength="5" autocomplete="off"
+                        onchange="this.setAttribute('value', this.value);" value="" type="email" name="email"
+                        id="form-modal_mail">
+                    <label for="form-modal_mail">E-mail</label>
+                </div> -->
+                <!-- <div class="form_input  question_input">
+
+                    <textarea value="" onchange="this.setAttribute('value', this.value);" name="question"
+                        id="form-modal_question" cols="30" rows="10"></textarea>
+                    <label for="form-modal_question">Ваш вопрос</label>
+                </div> -->
+                <div class="bottom_part_form">
+
+                    <button class="call_btn f_reg f-15" type="submit">
+                        Консультация<img loading="lazy" width="21" height="22" decoding="async" src="img/icon_arrowRight.svg" alt="">
+                    </button>
+                    <div class="agreement f_reg">Нажимая кнопку «Отправить заявку» я даю свое <br> согласие на обработку
+                        персональных данных</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="measurment form_block get_measure_2">
+        <div class="close_modal">
+            <img  width="23" height="23" class="rotate" src="@img/close_icon.svg" alt="">
+        </div>
+        <div class="form_left_text f_bold">
+            В ближайшее время мы с Вами свяжемся
+        </div>
+        <div class="form_block_content">
+            <div class="form_block_content_title f_reg f-3">
+                Бесплатный вызов <br> <span style="color: #F17202;">замерщика</span>
+            </div>
+
+        </div>
+        <div class="form_block_form">
+            <form novalidate class="modal_form form_measurment form" action="/send" method="POST" data-formtype="measurment_modal_2">
+                <input type="text" name="fio_name" style="display: none;">
+                <div class="form_input ">
+                    <input class="f_reg" autocomplete="off" onchange="this.setAttribute('value', this.value);" value=""
+                        type="text" name="name" id="form-modal_name">
+                    <label for="form-modal_name">Имя</label>
+                </div>
+                <div class="form_input ">
+                    <input class="f_reg" minlength="5" required autocomplete="off"
+                        onchange="this.setAttribute('value', this.value);" value="" type="tel" name="phone"
+                        id="form-modal_tel">
+                    <label for="form-modal_tel">Телефон</label>
+                </div>
                 <div class="form_input ">
                     <input class="f_reg" minlength="5" autocomplete="off"
                         onchange="this.setAttribute('value', this.value);" value="" type="email" name="email"
@@ -72,15 +132,17 @@
 
                     <textarea value="" onchange="this.setAttribute('value', this.value);" name="question"
                         id="form-modal_question" cols="30" rows="10"></textarea>
-                    <label for="form-modal_question">Ваш вопрос</label>
+                    <label for="form-modal_question">Ваши пожелания</label>
                 </div>
                 <div class="bottom_part_form">
 
-                    <button class="call_btn f_reg f-15" type="submit">
-                        Консультация<img loading="lazy" width="21" height="22" decoding="async" src="img/icon_arrowRight.svg" alt="">
+                    <button class="call_btn f_bold f-15" type="submit">
+                        Отправить заявку<img loading="lazy" decoding="async" src="@img/zamer__icon.svg" alt="">
                     </button>
-                    <div class="agreement f_reg">Нажимая кнопку «Отправить заявку» я даю свое <br> согласие на обработку
+                    <div class="agreement f_reg">Нажимая кнопку «Отправить» я даю свое <br> согласие на обработку
                         персональных данных</div>
+
+
                 </div>
             </form>
         </div>

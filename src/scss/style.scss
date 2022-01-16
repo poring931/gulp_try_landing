@@ -92,6 +92,22 @@ body {
 
 }
 
+
+.socials_icons{
+    display: flex;
+    gap:20px;
+    a{
+        display: flex;
+        img{
+            transition: 0.2s ease;
+        }
+        &:hover{
+            img{
+                transform: scale(1.03) translateY(-3px);
+            }
+        }
+    }
+}
 .header_block {
     margin-top: 60px;
     display: flex;
@@ -186,6 +202,7 @@ body {
     }
 }
 @media (min-width:560px) {
+
        .banner_about_3d {
 
         svg {
@@ -587,6 +604,11 @@ body {
     }
 
     &.get_measure {
+        bottom: 150px;
+        background: #F17202;
+        animation: pulsare 5s linear 0.5s infinite;
+    }
+    &.get_measure_2 {
         bottom: 150px;
         background: #F17202;
         animation: pulsare 5s linear 0.5s infinite;
@@ -1104,6 +1126,11 @@ html.no_overlay {
         align-items: center;
         justify-content: space-between;
     }
+    .address{
+        display: flex;
+        gap:15px;
+        align-items: flex-end;
+    }
 
     .header_block {
         div a {
@@ -1577,6 +1604,12 @@ html.no_overlay {
 }
 
 @media (max-width:600px) {
+    footer {
+        .copyright{
+                flex-wrap: wrap;
+    gap: 20px;
+        }
+    }
     .our_works_block_masonry .swiper-wrapper {
         display: flex;
     }
@@ -1850,7 +1883,7 @@ html.no_overlay {
                 max-width: 70%;
             }
 
-            row-gap: 18px;
+            row-gap: 25px;
             grid-template-columns: 1fr;
 
             &>div {
