@@ -21,22 +21,24 @@ export const html = () => {
     //         webpHtmlNosvg()
     //     )
     // )
-    .pipe(
-            versionNumber({
-                'value': '%DT%',
-                'append': {
-                    'key': '_v',
-                    'cover': 0,
-                    'to': [
-                        'css',
-                        'js'
-                    ]
-                },
-                'output': {
-                    'file': 'gulp/version.json'
-                }
-            })
-    )
+
+    // .pipe(//мб надо раскоменнтить. ломает аналитику при сборке
+    //         versionNumber({
+    //             'value': '%DT%',
+    //             'append': {
+    //                 'key': '_v',
+    //                 'cover': 0,
+    //                 'to': [
+    //                     'css',
+    //                     'js'
+    //                 ]
+    //             },
+    //             'output': {
+    //                 'file': 'gulp/version.json'
+    //             }
+    //         })
+    // )
+
     .pipe(
             htmlmin({ collapseWhitespace: true })
     )

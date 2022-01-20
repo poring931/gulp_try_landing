@@ -181,6 +181,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             var grid = document.querySelector('.grid');
             var msnry;
             imagesLoaded(grid, function () {
+              console.log('загрузилось');
               msnry = new Masonry(grid, {
                 itemSelector: '.grid-item',
                 columnWidth: '.grid-item',
@@ -194,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
       }
       addScriptMasonry("/files/masonry.pkgd.min.js")
-    }, 1500);
+    }, 500);
   } else {
     document.querySelectorAll('.grid-item').forEach(item =>(item.classList.add('swiper-slide')))
     // будет слайдер

@@ -79,6 +79,7 @@ export const productAttrToModal = (title, price='', cat, year, src='') => {
     let img_original = src.replace('-sm','').replace('-md','').replace('-lg',''),
         img_medium = src;
      document.querySelector('[name="prod_img"]').value = img_original;
+     document.querySelector('[name="prod_price"]').value = price;
 
     document.querySelector('.form_product_img img').src = img_original.replace('.webp','-sm.webp');
     document.querySelector('.form_product_img').href = img_original;

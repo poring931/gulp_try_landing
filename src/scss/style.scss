@@ -1604,6 +1604,7 @@ html.no_overlay {
 }
 
 @media (max-width:600px) {
+
     footer {
         .copyright{
                 flex-wrap: wrap;
@@ -1672,7 +1673,12 @@ html.no_overlay {
     }
 
     .our_last_works_tabs_list {
-        display: block;
+           display: flex;
+        flex-wrap: wrap;
+            justify-content: space-between;
+        &>div{
+            width: 45%;
+        }
 
         .our_last_works_tabs_list__item:not(.active):before {
             margin-right: 1px;
