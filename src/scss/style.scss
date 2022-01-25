@@ -5,6 +5,8 @@ $hover_text_c:#F17202;
 $main_text_c:#000;
 
 html {
+    //     width: 100vw;
+    // overflow-x: hidden;
     font-size: 24px;
     scroll-behavior: smooth;
 
@@ -181,6 +183,29 @@ body {
         font-size: 3rem;
         line-height: 1.15;
         text-transform: uppercase;
+        position: relative;
+        &:after{
+            content: "Без предоплаты За 3 дня!";
+            color: #fff;
+            background: #000;
+            display: flex;
+            border-radius: 100%;
+            width: 120px;
+            height: 120px;
+            padding: 20px;
+            position: absolute;
+            right: 0%;
+            top: 40%;
+            line-height: 1.4;
+            font-size: 19px;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    }
+    .under_title-text{
+        font-size: 1.5rem;
     }
 
     .rotate {
@@ -245,9 +270,9 @@ body {
         left: -4%;
         z-index: -1;
         top: -308px;
-        width: 100vw;
-        // overflow: hidden;
+        width: 110%;
         white-space: pre;
+        overflow: hidden;
     }
 
     .our_last_works_title {
@@ -446,12 +471,11 @@ body {
         opacity: 0.05;
         font-weight: 100;
         font-size: 288px;
-        width: max-content;
         left: -9%;
         top: -187px;
-        width: 100vw;
-        // overflow: hidden;
+        width: 116%;
         white-space: pre;
+        overflow: hidden;
 
     }
 
@@ -1129,7 +1153,8 @@ html.no_overlay {
     .address{
         display: flex;
         gap:15px;
-        align-items: flex-end;
+        align-items: center;
+        align-content: center;
     }
 
     .header_block {
@@ -1167,7 +1192,8 @@ html.no_overlay {
 //наши работы
 .our_works_block_masonry {
     margin-bottom: 100px;
-
+    padding-right: 50px!important;
+    padding-left: 50px!important;
     .grid:after {
         content: '';
         display: block;
@@ -1239,9 +1265,12 @@ html.no_overlay {
         padding-left: 50px !important;
 
     }
+    .our_works_block_masonry {
+        margin-top: 150px;
+    }
 }
 
-@media (max-width:1550px) {
+@media (max-width:1556px) {
     html {
         width: 100vw;
         overflow-x: hidden;
@@ -1258,6 +1287,7 @@ html.no_overlay {
     html {
         font-size: 20px;
     }
+ 
 
     .header_block {
         margin-top: 25px;
@@ -1274,6 +1304,7 @@ html.no_overlay {
             gap: 30px;
             margin: 64px 0;
         }
+      
     }
 
     .our_last_works_products {
@@ -1351,7 +1382,18 @@ html.no_overlay {
     }
 }
 
-
+@media (max-width:1450px) {
+    .banner_grid{
+        .banner_about_title {
+            &:after{
+            width: 96px;
+            height: 96px;
+            right: -4%;
+            font-size: 15px;
+            }
+        }
+    }
+}
 
 @media (max-width:1330px) {
     .container {
@@ -1432,6 +1474,19 @@ html.no_overlay {
 
 
 
+}
+@media (max-width:1100px) {
+        .banner_grid{
+        .banner_about_title {
+            &:after{
+                width: 62px;
+                height: 62px;
+                right: 0%;
+                font-size: 11px;
+                top: 100%;
+            }
+        }
+    }
 }
 
 @media (max-width:1050px) {
@@ -1633,7 +1688,7 @@ html.no_overlay {
     }
 
     .reviews_block .swiper_nav {
-        top: 7px;
+        top: 47px;
     }
 
     .our_works_block_masonry {
@@ -1738,10 +1793,15 @@ html.no_overlay {
                 top: -4px !important;
             }
         }
+        .under_title-text{
+            font-size: 1rem;
+            margin-top: 10px;
+        }
 
         .banner_about_3d {
             margin: 16px 0;
-
+            gap: 14px;
+            line-height: 1.4;
             svg {
                 max-width: 70px;
             }
@@ -1805,7 +1865,7 @@ html.no_overlay {
         margin-top: 140px;
 
         &.our_works_block_masonry {
-            margin-top: 0;
+            // margin-top: 0;
         }
 
         .our_worth_list {

@@ -253,6 +253,12 @@ chooseProductCat.forEach((currentItem, index) => {
 
 const filters = document.querySelectorAll('.filter');
 
+//делаем активную вкладку столы
+document.querySelectorAll(`.our_last_works_products .our_last_works_products_item:not([data-filter="tables"]`).forEach(el => {
+    el.classList.add('hide');
+    el.classList.remove('show');
+})
+
 filters.forEach(filter => {
 
   filter.addEventListener('click', function () {
